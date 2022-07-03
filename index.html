@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <title>MarioJump-A.L.M.L</title>
+</head>
+<body>
+
+    <div class="game-board">
+
+        <img src="./imagens/clouds.png" alt="nuvens" class="clouds">
+        <img src="./imagens/mario.gif" alt="mario-gif" class="mario">
+        <img src="./imagens/pipe.png" alt="pipe" class="pipe">
+
+        <h2 class="score">0</h2>
+        
+        <button class="btnPular" onclick="(jump())">Jump</button>
+    </div>
+
+    <script>
+        const mario = document.querySelector('.mario');
+        const pipe = document.querySelector('.pipe');
+        let score = document.querySelector('.score');
+        var numero = 0;
+
+       
+
+const jump = () => {
+    mario.classList.add('jump');
+
+    setTimeout(() => {
+        mario.classList.remove('jump');
+    }, 500);
+
+}
+
+function aumentarContador() {
+    return numero ++;   
+};
+
+var loop = setInterval(() => {
+
+        var pipePosition = pipe.offsetLeft;
+        var marioPosition = window.getComputedStyle(mario).bottom.replace('px','');
+        mostrarNaTela();
+    
+        if (pipePosition <= -30) {
+            aumentarContador();
+    }
+
+        function mostrarNaTela() {
+            const p = document.querySelector('.score');
+            p.innerText = numero;
+        };
+
+                
+      
+        if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
+
+            /*pipe.style.animation = 'none';*/
+            pipe.style.left = `${pipePosition}px`;
+
+            mario.src = './imagens/game-over.png';
+            mario.style.width = '75px'
+            mario.style.marginLeft = '50px'  
+            
+    }
+   
+
+}, 10);  
+
+
+document.addEventListener('keydown', jump);
+
+
+    </script>
+   
+</body>
+</html>
