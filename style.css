@@ -55,14 +55,14 @@
     width: 8rem;
     height: 3rem;
     position:absolute;
-    margin-top: 75rem;
-    margin-left: 25rem;
+    margin-top: 15rem;
+    margin-left: 15rem;
 }
 
 @media(max-width: 720px){
     .btnPular {
-        margin-top: 75rem;
-        margin-left: 25rem;
+        margin-top: 18rem;
+        margin-left: 15rem;
     }
 
     .game-board {
