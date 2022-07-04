@@ -55,9 +55,25 @@
     width: 8rem;
     height: 3rem;
     position:absolute;
-    margin-top: 38rem;
-    margin-left: 15rem;
+    margin-top: 75rem;
+    margin-left: 25rem;
 }
+
+@media(max-width: 720px){
+    .btnPular {
+        margin-top: 75rem;
+        margin-left: 25rem;
+    }
+
+    .game-board {
+        border: 10px solid red;
+        max-height: 538px;
+        height: 405px;
+        width: 170px;
+        max-width: 150px;
+    }
+}
+
 @keyframes pipe-animation {
     from {
         right: -80px;
@@ -100,3 +116,4 @@
     }
 
 }
+
